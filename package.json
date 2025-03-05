@@ -8,8 +8,9 @@
   },
   "scripts": {
     "dev": "vite",
-    "start": "vite",
-    "build": "run-p \"build-only {@}\" --",
+    "prestart": "npm run build",
+    "build": "npx vite build",
+    "start": "node index.js",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build"
