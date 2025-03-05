@@ -27,7 +27,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts" >
 import {ref, defineProps, watch} from 'vue';
 import WebGLScatterplot from './fixed-webgl-scatterplot.vue';
 import ControlPanel from './control.vue';
@@ -93,6 +93,7 @@ function hexToRgb(hex) {
     console.error('Error converting hex to RGB:', err);
     return [1.0, 0.0, 0.0]; // Default to red
   }
+
 }
 
 function generateColorMaps() {

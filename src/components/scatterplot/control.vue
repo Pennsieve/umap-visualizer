@@ -45,7 +45,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts" >
 import { ref, computed, watch } from 'vue';
 
 // Props with v-model support

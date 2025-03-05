@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts" >
 import { ref, onMounted, onBeforeUnmount, watch, nextTick, defineEmits } from 'vue';
 import * as d3 from 'd3';
 

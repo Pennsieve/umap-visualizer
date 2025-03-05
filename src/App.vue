@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {onMounted, ref, render} from "vue";
 import { asyncBufferFromUrl, parquetMetadata, parquetRead} from "hyparquet";
-import Wrapper from "@/components/scatterplot/wrapper.vue";
+import wrapper from "@/components/scatterplot/wrapper.vue";
 const TableData = ref();
 const TableMetaData = ref();
 
