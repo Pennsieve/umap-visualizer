@@ -2,7 +2,6 @@
 import {onMounted, ref, render} from "vue";
 import {asyncBufferFromUrl, parquetMetadata, parquetRead, parquetSchema} from "hyparquet";
 import wrapper from "@/components/scatterplot/wrapper.vue";
-import {getColumnRange} from "hyparquet/types/column";
 const TableData = ref();
 const TableMetaData = ref();
 
