@@ -28,20 +28,6 @@
         </div>
       </div>
     </div>
-    
-<!--    <button @click="applyColors">Apply Colors</button>-->
-    
-<!--    <div class="points-option">-->
-<!--      <label for="pointCount">Point Count:</label>-->
-<!--      <input type="range" -->
-<!--        id="pointCount" -->
-<!--        v-model.number="localPointCount" -->
-<!--        min="100" -->
-<!--        max="50000" -->
-<!--        step="100">-->
-<!--      <span>{{ localPointCount }}</span>-->
-<!--      <button @click="regenerate">Regenerate</button>-->
-<!--    </div>-->
   </div>
 </template>
 
@@ -101,17 +87,6 @@ const localStartColor = ref(props.startColor);
 const localEndColor = ref(props.endColor);
 const localSingleColor = ref(props.singleColor);
 
-// Color definitions for categorical variables
-const speciesColors = {
-  'Setosa': [0.8, 0.2, 0.2],      // Red
-  'Versicolor': [0.2, 0.8, 0.2],  // Green
-  'Virginica': [0.2, 0.2, 0.8]    // Blue
-};
-
-const sexColors = {
-  'Male': [0.8, 0.4, 0.0],    // Orange
-  'Female': [0.8, 0.2, 0.8]   // Purple
-};
 
 // Helper to convert RGB array to hex color
 function rgbToHex(rgbArray) {

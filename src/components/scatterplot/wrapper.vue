@@ -102,9 +102,21 @@ function generateColorMaps() {
   const rgbColors = hexColors.map(color => hexToRgb(color))
 
   // iterate over Metadata Fields:
-  for (let i = 0; i <(props.metaData.schema.length-1); i++) {
+  for (let i = 0; i <(props.metaData.key_value_metadata.length-1); i++) {
 
-    const type = props.metaData.schema[i+1].name
+    const type = props.metaData.key_value_metadata[i].key
+    const values = JSON.parse(props.metaData.key_value_metadata[i].value)
+    let valueMap = new Map()
+
+    let vIndex = 0
+    for (let v in values) {
+      valueMap.set(values[v], rgbColors[vIndex%rgbColors.length])
+      vIndex++
+    }
+
+    colorMapMap.value.set(type, valueMap)
+
+
     let varType = colorMapMap.value.get(type)
     if (varType == null) {
       colorMapMap.value.set(type, new Map())
@@ -113,22 +125,22 @@ function generateColorMaps() {
 
   console.log(colorMapMap)
 
-  for (let i = 0; i < props.data.length; i++) {
-
-    for (let j = 2; j < props.data[i].length; j++) {
-      const type = props.metaData.schema[j+1].name
-      const value = props.data[i][j]
-      let varType = colorMapMap.value.get(type)
-
-      // cellType color
-      let varTypeOption = varType.get(value);
-      if (varTypeOption == null) {
-        varType.set(value, rgbColors[varType.size%rgbColors.length])
-        colorMapMap.value.set(type, varType)
-      }
-
-    }
-  }
+  // for (let i = 0; i < props.data.length; i++) {
+  //
+  //   for (let j = 2; j < props.data[i].length; j++) {
+  //     const type = props.metaData.schema[j+1].name
+  //     const value = props.data[i][j]
+  //     let varType = colorMapMap.value.get(type)
+  //
+  //     // cellType color
+  //     let varTypeOption = varType.get(value);
+  //     if (varTypeOption == null) {
+  //       varType.set(value, rgbColors[varType.size%rgbColors.length])
+  //       colorMapMap.value.set(type, varType)
+  //     }
+  //
+  //   }
+  // }
 
 }
 
