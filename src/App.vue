@@ -12,7 +12,7 @@ onMounted(async () => {
     const res = await fetch('/DRG_nonneurons_release.parquet')
     const arrayBuffer = await res.arrayBuffer()
 
-    const url = 'http://localhost:5173/DRG_nonneurons_release.parquet'
+    const url = 'https://main.d1kr5y92eyk6g.amplifyapp.com/DRG_nonneurons_release.parquet'
 
     await parquetRead({
       file: await asyncBufferFromUrl({url}),
